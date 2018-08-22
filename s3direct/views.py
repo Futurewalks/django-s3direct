@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+
 try:
     from urllib.parse import unquote
 except ImportError:
@@ -11,7 +12,8 @@ from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbid
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
-from .utils import get_aws_v4_signature, get_aws_v4_signing_key, get_s3direct_destinations, get_signing_secret_key, get_access_key
+from .utils import get_aws_v4_signature, get_aws_v4_signing_key, get_s3direct_destinations, get_signing_secret_key, \
+    get_access_key, get_key
 
 
 @csrf_protect
